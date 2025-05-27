@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Despesas - Enzodoairmaxtn</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestão de Despesas - Enzodoairmaxtn</h1>
+        <label for="despesas">Total de Despesas (R$):</label>
+        <input type="number" id="despesas" placeholder="Digite as despesas">
+
+        <label for="receita">Receita Mensal (R$):</label>
+        <input type="number" id="receita" placeholder="Digite a receita">
+
+        <button onclick="calcularEconomia()">Calcular Economia</button>
+
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function calcularEconomia() {
+            let despesas = parseFloat(document.getElementById("despesas").value) || 0;
+            let receita = parseFloat(document.getElementById("receita").value) || 0;
+            let economia = receita - despesas;
+            document.getElementById("resultado").innerText = `Economia Mensal: R$ ${economia.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
